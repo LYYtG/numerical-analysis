@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ctex}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{geometry}
+\geometry{left = 2.0cm,right = 2.0cm,top = 1.5cm,bottom = 1.5cm}
+\usepackage{xcolor}
+\lstset{
+ columns=fixed,       
+ numbers=left,                                        
+ basicstyle=\fontspec{Consolas},
+ numberstyle=\tiny\color{gray},                       
+ frame=none,                                          
+ backgroundcolor=\color[RGB]{245,245,244},            
+ keywordstyle=\color[RGB]{40,40,255},                
+ numberstyle=\footnotesize\color{darkgray},           
+ commentstyle=\it\color[RGB]{0,96,96},                
+ stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},   
+ showstringspaces=false,                              
+ language=c++, 
+ breaklines = true,                                      
+}
+\graphicspath{{/images}}
+\title{Homework 1 Program part}
+\author{信息与计算科学 1901 3190103519 李杨野}
+\date{\today}
+\begin{document}
+    \maketitle
+    \section{A}
+    The code was in Algorithm.h, Functions.h and Algorithm.cpp.
+    Here is a total result of program.
+    \begin{lstlisting}
+Solution of B_1: 0.860333
+Solution of B_2: 0.641185
+Solution of B_3: 1.82938
+Solution of B_4: 0.117877
+Solution of C_1: 4.49341
+Solution of C_2: 7.72525
+Solution of D_1: 3.14159
+Solution of D_2: 1.30633
+Solution of D_3: -0.188685
+Solution of E_1: 0.166165
+Solution of E_2: 0.166166
+Solution of E_3: 0.166166
+Solution of F_1: 32.9722degree
+Solution of F_2: 33.1689degree
+Solution of F_3: 33.1689degree
+    \end{lstlisting}
+    \section{B}
+    \subsection{}
+    $x^{-1}-\tan x$ on [0,$\frac{\pi}{2}$] 
+
+    ans:0.860333
+    \subsection{}
+    $x^{-1}-2^x$ on [0,1] 
+
+    ans:0.641185
+    \subsection{}
+    $2^{-x}+e^x+2\cos x-6$ on [1,3] 
+
+    ans:1.82938
+    \subsection{}
+    $(x^3+4x^2+3x+5)/(2x^3-9x^2+18x-2)$ on [0,4] 
+
+    ans:0.117877
+    \section{C}
+    $x = \tan x$
+
+    root near 4.5: 4.49341, root near 7.7: 7.72525
+
+    \section{D}
+    \subsection{}
+    $\sin (x/2)-1$ with $x_0 = 0,x_1 = \frac{\pi}{2}$
+
+    ans:3.14159
+    \subsection{}
+    $e^x-\tan x$ with $x_0 = 1,x_1 = 1.4$
+
+    ans:1.30633
+    \subsection{}
+    $x^3-12x^2+3x+1$ with $x_0 = 0,x_1 = -0.5$
+
+    ans:-0.188685
+
+    test with other initial values:$x_0 = 20,x_1 = 10$, and got ans:11.7371
+    \section{E}
+    bisection's interval: [0,1]. ans:0.166165
+
+    Newton initial value: 0.5. ans:0.166166
+
+    secant method $x_0 = 0,x_1 = 1$. ans:0.166166
+    \section{F}
+    \subsection{}
+    Answer around 33 degree: 32.9722 degree(D = 55 in.)
+    \subsection{}
+    Answer around 33 degree: 33.1689 degree(D = 30 in.)
+    \subsection{}
+    When one initial value is around 33 degree, the output is fixed at 33.1689 degree(D = 30 in.). However, if we use initial value too far from 33 degree, 
+    the output can be presented as follows:
+    $$x\approx N\pi -11.5°$$ 
+    $$x \approx 2N\pi +33° $$
+    $$x \approx 2N\pi +147°, \ N \in \mathbb{Z} $$
+    Because the answer is in a circle, thus faraway initial value will lead to a far answer near the input.
+\end{document}
