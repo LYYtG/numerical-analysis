@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ctex}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{geometry}
+\usepackage{setspace}
+\geometry{left = 2.0cm,right = 2.0cm,top = 1.5cm,bottom = 1.5cm}
+\usepackage{xcolor}
+\lstset{
+ columns=fixed,       
+ numbers=left,                                        
+ basicstyle=\fontspec{Consolas},
+ numberstyle=\tiny\color{gray},                       
+ frame=none,                                          
+ backgroundcolor=\color[RGB]{245,245,244},            
+ keywordstyle=\color[RGB]{40,40,255},                
+ numberstyle=\footnotesize\color{darkgray},           
+ commentstyle=\it\color[RGB]{0,96,96},                
+ stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},   
+ showstringspaces=false,                              
+ language=c++, 
+ breaklines = true,                                      
+}
+\graphicspath{{/images}}
+\title{Homework 0}
+\author{信息与计算科学 1901 3190103519 李杨野}
+\date{\today}
+\begin{document}
+
+\begin{spacing}{1.0}
+    \maketitle
+    \section{Exercise A.15}
+    A function f is not Riemann integrable on [a,b] if 
+    
+    $$ \forall L \in \mathbb{R}, \exists \epsilon > 0, s.t. \forall \delta > 0,$$
+    $$ \exists P_{n}(a,b) \ with \ h(P_{n}) < \delta, |S_{n}(f) - L| \geq \epsilon. $$ 
+
+    \section{Exercise A.19}
+    \subsection{}
+    $$\{x|x \ \mathbf{mod} \ 2 = 0,x \in \mathbb{N^+} \} \cap \{x|x \ \mathbf{mod} \ a = 0, a \in \{1,x\},x \in \mathbb{N^+} \} = {2}$$
+    negation:
+    $$ \exists y \neq 2,y \subset \{x|x \ \mathbf{mod} \ 2 = 0,x \in \mathbb{N^+} \} \cap \{x|x \ \mathbf{mod} \ a = 0, a \in \{1,x\},x \in \mathbb{N^+} \}$$
+    \subsection{}
+    $$\forall a,b,c \in \mathbb{Z}, a \times (b \times c) = (a \times b)\times c$$
+    negation:
+    $$\exists a,b,c \in \mathbb{Z}, s.t. a \times (b \times c) \neq (a \times b)\times c$$
+    \subsection{}
+    $$\exists N \in \mathbb{N^+},s.t. \ \mathbf{card}(\{a|a \in 2\mathbb{N^+}+2, \forall p,q \in \mathbb{P},a \neq p+q\}) < N$$
+    negation:
+    $$\forall N \in \mathbb{N^+}, \mathbf{card}(\{a|a \in 2\mathbb{N^+}+2, \forall p,q \in \mathbb{P},a \neq p+q\}) > N$$
+    \section{Exercise B.110}
+    \subsection{}
+    Firstly, we have $\left\langle{ \bf{u},\bf{v+w} }\right\rangle = \overline{\left\langle{ \bf{v+w},\bf{u} }\right\rangle}$. 
+    According to additivity in the first slot, $\overline{\left\langle{ \bf{v+w},\bf{u} }\right\rangle} = \overline{\left\langle{ \bf{v},\bf{u} }\right\rangle} + \overline{\left\langle{ \bf{w},\bf{u} }\right\rangle}$.
+    According to conjugate symmetry, $\overline{\left\langle{ \bf{v},\bf{u} }\right\rangle} + \overline{\left\langle{ \bf{w},\bf{u} }\right\rangle} = \left\langle{ \bf{u},\bf{v} }\right\rangle + \left\langle{ \bf{u},\bf{w} }\right\rangle $,
+    such that $\left\langle{ \bf{u},\bf{v+w} }\right\rangle = \left\langle{ \bf{u},\bf{v} }\right\rangle + \left\langle{ \bf{u},\bf{w} }\right\rangle $.
+    \subsection{}
+    Firstly, we have $\left\langle{ {\bf{v}},a\bf{w} }\right\rangle = \overline{\left\langle{ a\bf{w},\bf{v} }\right\rangle} = \overline{a} \ \overline{\left\langle{ \bf{w},\bf{v} }\right\rangle}$
+    (homogeneity in the first slot).
+    According to conjugate symmetry,$\overline{a} \ \overline{\left\langle{ \bf{w},\bf{v} }\right\rangle} = \overline{a} \ \left\langle{ \bf{v},\bf{w} }\right\rangle$,
+    so $\left\langle{ {\bf{v}},a\bf{w} }\right\rangle = \overline{a} \ \left\langle{ \bf{v},\bf{w} }\right\rangle$.
+    \section{Exercise C.42}
+    case 1: a>0.
+
+    $\forall \epsilon > 0,\forall x_1,x_2 \in (a,\infty),if \ |x_1 - x_2| < \delta, |f(x_1) - f(x_2)| = |\frac{1}{x_1^2}- \frac{1}{x_2^2}| = |x_1 - x_2|\frac{x_1+x_2}{x_1^2x_2^2} < |x_1 - x_2|\frac{2}{a^3}$,so let $\delta < \frac{a^3}{2} \epsilon$,
+    and $|f(x_1) - f(x_2)| < \epsilon$, such that the definition of uniformly continuous satisfied.
+
+    case 2: a=0.
+    $\forall \epsilon > 0,|x_1 - x_2| < \delta,|f(x_1) - f(x_2)| = |x_1 - x_2|\frac{x_1+x_2}{x_1^2x_2^2}$.If $\delta > \frac{2}{\epsilon^2}$ let $x_1 = \frac{1}{\epsilon}, x_2 = \frac{2}{\epsilon}$
+    , and $|x_1 - x_2|\frac{x_1+x_2}{x_1^2x_2^2} > \frac{3\epsilon^2}{4} \delta > \epsilon$. 
+    
+    Else, if $\delta \leq \frac{2}{\epsilon^2}$, then $\epsilon^2\delta > 2$
+    let $x_1 \in (0, \frac{1}{2}\epsilon^2 \delta), x_2 \in (\epsilon^2\delta,2)$, and therefore $|x_1 - x_2|\frac{x_1+x_2}{x_1^2x_2^2} > |\frac{1}{2}\epsilon^2\delta| \frac{\epsilon^2\delta}{2x_1^2x_2^2} > \frac{2}{x_2^2}>\epsilon$
+
+    \section{Answers}
+        The determinant is created to simplify the expression of multi-equations as well as express the volume of a parallelotope spanned by $n$ vectors in $\mathbb{R}^n$.
+        Determinant helps to develop the mathematical abstraction by transforming the signed volume in high dimensional spaces to a few numbers, and the sign is defined by the odevty of the number of pairs
+         of integers $(j,k)$ with $1\leq j<k\leq n$ in the list$(m_1,\dots, m_n)$. For all determinants whose vectors in $\mathbb{R}^n$, 
+         their value can be compared based on linearing orderings, because $\bf{det}B \leq \bf{det}A$ or $\bf{det}B \geq \bf{det}A$, if $\bf{det}B \leq \bf{det}A$ and $\bf{det}A \leq \bf{det}B$,
+         $\bf{det}A = \bf{det}B$, if $\bf{det}A \leq \bf{det}B$ and $\bf{det}B \leq \bf{det}C$ that $\bf{det}A \leq \bf{det}C$.
+
+    
+\end{spacing}
+    
+\end{document}
